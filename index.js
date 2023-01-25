@@ -1,6 +1,7 @@
 const express = require('express');
 const appwrite = require("appwrite");
 const app = express();
+require('dotenv').config();
 
 app.get('/', (req, res) => {
     const client = new appwrite.Client();
@@ -28,11 +29,22 @@ app.get('/', (req, res) => {
   
 });
 
+app.post('/razorpay-webhook', (req, res) => {
+  const client = new appwrite.Client();
+  client
+  .setEndpoint('http://appwrite.engexpert.in/v1')
+  .setProject('63ca393fc7b7f28ab286').setKey(
+    process.env.APPWRITE_API_KEY
+  );
+  console.log(req.body);
+  const databases = new appwrite.Databases(client);
+
+});
+
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });
 
 
 
-
-
+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
