@@ -38,7 +38,16 @@ app.post('/razorpay-webhook', (req, res) => {
   );
   console.log(req.body);
   const databases = new appwrite.Databases(client);
+  const promise = databases.createDocument('main', 'razorpay_purchases', 'unique()', {
+    'value': JSON.stringify(req.body),
+  });
 
+  promise.then(function (response) {
+      console.log(response); // Success
+  }, function (error) {
+      console.log(error); // Failure
+  });
+  
 });
 
 app.listen(3000, () => {
