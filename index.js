@@ -14,7 +14,7 @@ client
   .setEndpoint('http://appwrite.engexpert.in/v1')
   .setProject('63ca393fc7b7f28ab286');
 
-  const account = new appwrite.Account(client);
+const account = new appwrite.Account(client);
 
 
 app.get('/', (req, res) => {
@@ -81,15 +81,18 @@ app.route('/reset-password')
     const secret = req.query.secret;
 
     // if valid, show the reset password form
-    res.send('<form action="/reset-password" method="post">' +
-      '<label for="password">New Password:</label>' +
-      '<input type="password" id="password" name="password"><br><br>' +
-      '<label for="cpassword">Confirm Password:</label>' +
-      '<input type="password" id="cpassword" name="cpassword"><br><br>' +
+    res.send('<div style="display: flex; justify-content: center; align-items: center; height: 80vh; overflow: hidden;">' +
+      '<form action="/reset-password" method="post" style=" padding: 2rem; width:100%">' +
+      + '<h1 style="color: #f2c702;">EngExpert</h1>' +
+      + '<h4 style="margin-bottom: 2rem; margin-top: -1rem; font-weight: 500; color: gray;">Reset Password</h4>' +
+      '<label for="password" style="font-weight: 500;">New Password:</label>' +
+      '<input type="password" id="password" name="password" style="margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 2rem;"><br><br>' +
+      '<label for="cpassword" style="font-weight: 500; ">Confirm Password:</label>' +
+      '<input type="password" id="cpassword" name="cpassword" style="margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 2rem;"><br><br>' +
       '<input type="hidden" name="userId" value="' + userId + '">' +
       '<input type="hidden" name="secret" value="' + secret + '">' +
-      '<input type="submit" value="Reset Password">' +
-      '</form>');
+      '<input type="submit" value="Reset Password" style="width:100%; margin-top: 1rem; padding: 0.5rem; height: 2rem; color: #fff; background-color: #f2c702; border: none; outline: none; cursor: pointer; border-radius: 4px;">' +
+      '</form></div>');
 
   })
   .post((req, res) => {
@@ -105,7 +108,7 @@ app.route('/reset-password')
       promise.then(function (response) {
         res.send('Your password has been reset successfully.');
       }, function (error) {
-        res.send("Error in updating password "+ error.message + `${userId}: ${secret}`);
+        res.send("Error in updating password " + error.message + `${userId}: ${secret}`);
       });
     }
   });
