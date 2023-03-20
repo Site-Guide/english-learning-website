@@ -81,16 +81,16 @@ app.route('/reset-password')
     const secret = req.query.secret;
 
     // if valid, show the reset password form
-    res.send(
-      '<form action="/reset-password" method="post" style=" padding: 2rem; width:100%; margin-top: 50%;">' +
-      ' <label for="password" style="font-weight: 500;"><span style="color: #f2c702; font-size: 2rem; font-weight: 600;">EngExpert</span><br /> <p style="margin-bottom: 2rem; margin-top: -1rem; font-weight: 500; color: gray;">Reset Password</p> <br /><br />New Password:</label>' +
-      '<input type="password" id="password" name="password" style="margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 2rem;"><br><br>' +
+    res.send('<div style="display: flex; justify-content: center; align-items: center; height: 80vh; overflow: hidden;">' +
+      '<form action="/reset-password" method="post" style=" padding: 2rem; width:100%; font-size:3rem">' +
+      '<label for="password" style="font-weight: 500;"><span style="color: #f2c702; font-size: 2rem; font-weight: 600;">EngExpert</span><br /><p style="margin-bottom: 2rem; margin-top: -1rem; font-weight: 500; color: gray;">Reset Password</p>New Password:</label>' +
+      '<input type="password" id="password" name="password" style=" font-size:3rem; margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 6rem;"><br><br>' +
       '<label for="cpassword" style="font-weight: 500; ">Confirm Password:</label>' +
-      '<input type="password" id="cpassword" name="cpassword" style="margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 2rem;"><br><br>' +
+      '<input type="password" id="cpassword" name="cpassword" style=" font-size:3rem; margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 6rem;"><br><br>' +
       '<input type="hidden" name="userId" value="' + userId + '">' +
       '<input type="hidden" name="secret" value="' + secret + '">' +
-      '<input type="submit" value="Reset Password" style="width:100%; margin-top: 1rem; padding: 0.5rem; height: 2rem; color: #fff; background-color: #f2c702; border: none; outline: none; cursor: pointer; border-radius: 4px;">' +
-      '</form>');
+      '<input type="submit" value="Reset Password" style=" font-size:3rem; width:100%; margin-top: 1rem; padding: 0.5rem; height: 5rem; color: #fff; background-color: #f2c702; border: none; outline: none; cursor: pointer; border-radius: 8px;">' +
+      '</form></div>');
 
   })
   .post((req, res) => {
