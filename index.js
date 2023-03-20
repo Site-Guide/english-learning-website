@@ -83,7 +83,7 @@ app.route('/reset-password')
     // if valid, show the reset password form
     res.send('<div style="display: flex; justify-content: center; align-items: center; height: 80vh; overflow: hidden;">' +
       '<form action="/reset-password" method="post" style=" padding: 2rem; width:100%; font-size:3rem">' +
-      '<label for="password" style="font-weight: 500;"><span style="color: #f2c702; font-size: 2rem; font-weight: 600;">EngExpert</span><br /><p style="margin-bottom: 2rem; margin-top: -1rem; font-weight: 500; color: gray;">Reset Password</p>New Password:</label>' +
+      '<label for="password" style="font-weight: 500;"><p style="color: #f2c702; font-size: 7rem; font-weight: 600; margin-bottom:0;">EngExpert</p><br /><p style="margin-bottom: 5rem; margin-top: -3rem; font-weight: 500; color: gray; margin-left: 1rem;">Reset Password</p>New Password:</label>' +
       '<input type="password" id="password" name="password" style=" font-size:3rem; margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 6rem;"><br><br>' +
       '<label for="cpassword" style="font-weight: 500; ">Confirm Password:</label>' +
       '<input type="password" id="cpassword" name="cpassword" style=" font-size:3rem; margin-right: 100%; width: 100%; border: none; border-bottom: 3px solid #f2c702; outline: none; height: 6rem;"><br><br>' +
